@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestAmazonApp-20230830154454" tests="2" file=".py" time="69.802" timestamp="2023-08-30T15:46:27" failures="0" errors="2" skipped="0">
+	<testcase classname="TestAmazonApp" name="test_filter_by_department" time="25.141" timestamp="2023-08-30T15:45:42" file="amazon_test.py" line="45">
+		<error type="TimeoutException" message="Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive - bridgeaxis.com\Documents\Graffitecs task\amazon_test.py", line 46, in test_filter_by_department
+    self.app.click_deal_promotion()
+  File "C:\Users\Lenovo\OneDrive - bridgeaxis.com\Documents\Graffitecs task\amazon_app.py", line 54, in click_deal_promotion
+    deal_button = wait.until(EC.presence_of_element_located((By.XPATH, "//android.view.View[@content-desc='Shop deals ']/android.widget.TextView")))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)
+]]></error>
+	</testcase>
+	<testcase classname="TestAmazonApp" name="test_total_number_for_category" time="44.662" timestamp="2023-08-30T15:46:27" file="amazon_test.py" line="31">
+		<error type="TimeoutException" message="Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive - bridgeaxis.com\Documents\Graffitecs task\amazon_test.py", line 37, in test_total_number_for_category
+    self.app.click_shop_by_department()
+  File "C:\Users\Lenovo\OneDrive - bridgeaxis.com\Documents\Graffitecs task\amazon_app.py", line 30, in click_shop_by_department
+    shop_by_department = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Shop by Department']")))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)
+]]></error>
+	</testcase>
+</testsuite>

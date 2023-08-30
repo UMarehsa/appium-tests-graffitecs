@@ -1,3 +1,4 @@
+from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -29,6 +30,13 @@ class AmazonApp:
         wait = WebDriverWait(self.driver, 20)
         shop_by_department = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Shop by Department']")))
         shop_by_department.click()
+
+    def click_settings(self):
+        time.sleep(5)
+        wait = WebDriverWait(self.driver, 20)
+        shop_by_department = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Settings']")))
+        shop_by_department.click()
+        time.sleep(5)
 
     def click_electronics_category(self):
         time.sleep(5)
@@ -69,3 +77,64 @@ class AmazonApp:
         wait = WebDriverWait(self.driver, 20)
         filter_button = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Software']")))
         filter_button.click()
+
+
+
+    def click_currency(self):
+        wait = WebDriverWait(self.driver, 20)
+        filter_button = wait.until(EC.presence_of_element_located((By.ID, "com.amazon.mShop.android.shopping:id/rs-settings-currency")))
+        filter_button.click()
+        time.sleep(5)
+
+
+    def search_bar(self) -> None:
+        wait = WebDriverWait(self.driver, 20)
+        # Find and tap on the Search bar
+        search_bar = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Search Amazon']")))
+        search_bar.click()
+
+        # Type "Apple" and press Enter
+        search_bar.send_keys("Apple")
+
+        # Wait for search results to load
+        time.sleep(5)
+
+    def click_on_img(self) -> None:
+        wait = WebDriverWait(self.driver, 20)
+        # Find and tap the picture of the product
+        product_picture = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Apple iPhone 11, 64GB, White - Unlocked (Renewed Premium)']")))
+        product_picture.click()
+
+        time.sleep(5)
+        # Swipe Left to Right on the product picture
+        start_x = 0.8  # Start from the right side
+        end_x = 0.2  # Swipe to the left side
+        start_y = end_y = 0.5  # Center of the screen vertically
+
+        action = TouchAction(self.driver)
+        action.press(x=start_x, y=start_y).move_to(x=end_x, y=end_y).release().perform()
+
+    def assert_price(self) -> None:
+        wait = WebDriverWait(self.driver, 20)
+        # Verify price of the product is displayed
+        price_element = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Price:']")))
+        self.assertTrue(price_element.is_displayed())
+
+    def assert_payment_method(self) -> None:
+        wait = WebDriverWait(self.driver, 20)
+        # Verify payment options are displayed
+        payment_options = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Purchase options and add-ons']")))
+        self.assertTrue(payment_options.is_displayed())
+
+    def add_cart(self) -> None:
+        wait = WebDriverWait(self.driver, 20)
+        # Scroll down to find and tap "Add to Cart" button
+        self.driver.execute_script("mobile: scroll", {"direction": "down"})
+        add_to_cart_button = wait.until(EC.presence_of_element_located((By.XPATH, "//android.widget.Button[@text='Add to Cart']")))
+        add_to_cart_button.click()
+
+    def assert_add_to_cart(self) -> None:
+        wait = WebDriverWait(self.driver, 20)
+        # Verify "Added to Cart" message
+        added_to_cart_message = wait.until(EC.presence_of_element_located((By.XPATH, "//android.widget.TextView[@text='Added to Cart']")))
+        self.assertTrue(added_to_cart_message.is_displayed())

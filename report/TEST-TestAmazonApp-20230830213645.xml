@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestAmazonApp-20230830213645" tests="1" file=".py" time="19.391" timestamp="2023-08-30T21:37:04" failures="0" errors="1" skipped="0">
+	<testcase classname="TestAmazonApp" name="test_add_to_cart" time="19.391" timestamp="2023-08-30T21:37:04" file="amazon_test.py" line="64">
+		<error type="WebDriverException" message="Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.commands.getDevicePixelRatio (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\lib\commands\viewport.js:14:10)
+    at AndroidUiautomator2Driver.fillDeviceDetails (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\lib\driver.js:256:28)
+    at AndroidUiautomator2Driver.createSession (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\lib\driver.js:242:7)
+    at AppiumDriver.createSession (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\lib\appium.js:374:35)"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive - bridgeaxis.com\Documents\Graffitecs task\amazon_test.py", line 21, in setUp
+    self.driver = webdriver.Remote(appium_server_url, capabilities)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\appium\webdriver\webdriver.py", line 257, in __init__
+    super().__init__(
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 286, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\appium\webdriver\webdriver.py", line 346, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, w3c_caps)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 440, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 245, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.commands.getDevicePixelRatio (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\lib\commands\viewport.js:14:10)
+    at AndroidUiautomator2Driver.fillDeviceDetails (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\lib\driver.js:256:28)
+    at AndroidUiautomator2Driver.createSession (C:\Users\Lenovo\.appium\node_modules\appium-uiautomator2-driver\lib\driver.js:242:7)
+    at AppiumDriver.createSession (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\appium\lib\appium.js:374:35)
+]]></error>
+	</testcase>
+</testsuite>
