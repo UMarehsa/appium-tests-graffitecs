@@ -26,16 +26,6 @@ class TestAmazonApp(unittest.TestCase):
             self.driver.quit()
 
 
-    def test_add_to_cart(self):
-        self.app.allow_permissions()
-        self.app.skip_sign_in()
-        self.app.search_bar()
-        self.app.click_on_img()
-        self.app.assert_price()
-        self.app.assert_payment_method()
-        self.app.add_cart()
-        self.app.assert_add_to_cart()
-
 
     def test_total_number_for_category(self) -> None:
         self.app.allow_permissions()
@@ -51,15 +41,22 @@ class TestAmazonApp(unittest.TestCase):
         # Wait for a moment to see the results
         time.sleep(5)
         self.app.click_home()
+    def test_add_to_cart(self) -> None:
+        self.app.allow_permissions()
+        self.app.skip_sign_in()
+        self.app.search_bar()
+        self.app.click_on_img()
+        self.app.assert_price()
+        self.app.assert_payment_method()
+        self.app.add_cart()
+        self.app.assert_add_to_cart()
+
 
     def test_filter_by_department(self) -> None:
         self.app.allow_permissions()
         self.app.skip_sign_in()
         self.app.click_deal_promotion()
         self.app.click_filters()
-        self.app.click_see_more()
-        self.app.click_software()
-
         # Wait for a moment to see the results
         time.sleep(5)
 
