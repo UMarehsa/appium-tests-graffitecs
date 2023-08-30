@@ -7,7 +7,8 @@ appium_server_url = 'http://localhost:4723'
 app_path = "apk/amazon.apk"
 
 class TestAmazonApp(unittest.TestCase):
-    def setUp(self) -> None:
+    @classmethod
+    def setUpClass(cls) -> None:
         capabilities = dict(
             platformName='Android',
             automationName='uiautomator2',
@@ -18,12 +19,13 @@ class TestAmazonApp(unittest.TestCase):
             language='en',
             locale='US'
         )
-        self.driver = webdriver.Remote(appium_server_url, capabilities)
-        self.app = AmazonApp(self.driver)
+        cls.driver = webdriver.Remote(appium_server_url, capabilities)
+        cls.app = AmazonApp(cls.driver)
 
-    def tearDown(self) -> None:
-        if self.driver:
-            self.driver.quit()
+    @classmethod
+    def tearDownClass(cls) -> None:
+        if cls.driver:
+            cls.driver.quit()
 
     def test_total_number_for_category(self) -> None:
         self.app.allow_permissions()
@@ -38,9 +40,8 @@ class TestAmazonApp(unittest.TestCase):
 
         # Wait for a moment to see the results
         time.sleep(5)
-
-    def test_filter_by_department(self) -> None:
         self.app.click_home()
+    def test_filter_by_department(self) -> None:
         self.app.click_deal_promotion()
         self.app.click_filters()
         self.app.click_see_more()
