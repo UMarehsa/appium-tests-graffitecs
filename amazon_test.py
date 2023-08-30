@@ -34,6 +34,7 @@ class TestAmazonApp(unittest.TestCase):
         self.app.click_shop_by_department()
         time.sleep(5)
         self.app.click_electronics_category()
+        self.app.assert_page()
 
         # Wait for a moment to see the results
         time.sleep(5)

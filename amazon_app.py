@@ -36,6 +36,12 @@ class AmazonApp:
         electronics_category = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Electronics']")))
         electronics_category.click()
 
+    def assert_page(self):
+        wait = WebDriverWait(self.driver,20)
+        heading_element = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Electronics']")))
+        expected_heading_text = "Electronics"
+        actual_heading_text = heading_element.text
+        assert expected_heading_text == actual_heading_text, f"Expected '{expected_heading_text}', but got '{actual_heading_text}'"
     def click_home(self):
         time.sleep(5)
         wait = WebDriverWait(self.driver, 20)
