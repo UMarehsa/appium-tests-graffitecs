@@ -4,6 +4,7 @@ from appium import webdriver
 from amazon_app import AmazonApp
 import xmlrunner
 appium_server_url = 'http://localhost:4723'
+app_path = "apk/amazon.apk"
 
 class TestAmazonApp(unittest.TestCase):
     def setUp(self) -> None:
@@ -11,7 +12,7 @@ class TestAmazonApp(unittest.TestCase):
             platformName='Android',
             automationName='uiautomator2',
             deviceName='Android Emulator',
-            app=r"C:\Users\Lenovo\Downloads\amazon.apk",
+            app=app_path,
             appPackage="com.amazon.mShop.android.shopping",
             appActivity="com.amazon.mShop.home.HomeActivity",
             language='en',
