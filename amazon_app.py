@@ -31,16 +31,19 @@ class AmazonApp:
         shop_by_department.click()
 
     def click_electronics_category(self):
+        time.sleep(5)
         wait = WebDriverWait(self.driver, 20)
         electronics_category = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='Electronics']")))
         electronics_category.click()
 
     def click_home(self):
+        time.sleep(5)
         wait = WebDriverWait(self.driver, 20)
         home_button = wait.until(EC.presence_of_element_located((By.XPATH, "//android.widget.ImageView[@content-desc='Home Tab 1 of 4']")))
         home_button.click()
 
     def click_deal_promotion(self):
+        time.sleep(5)
         wait = WebDriverWait(self.driver, 20)
         deal_button = wait.until(EC.presence_of_element_located((By.XPATH, "//android.view.View[@content-desc='Shop deals ']/android.widget.TextView")))
         deal_button.click()
@@ -51,6 +54,7 @@ class AmazonApp:
         filter_button.click()
 
     def click_see_more(self):
+        time.sleep(5)
         wait = WebDriverWait(self.driver, 20)
         filter_button = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@text='See more']")))
         filter_button.click()

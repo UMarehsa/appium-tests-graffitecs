@@ -28,7 +28,6 @@ class TestAmazonApp(unittest.TestCase):
     def test_total_number_for_category(self) -> None:
         self.app.allow_permissions()
         self.app.skip_sign_in()
-        time.sleep(5)
         self.app.click_cart_icon()
         self.app.click_home()
         self.app.click_burger_menu()
@@ -41,10 +40,8 @@ class TestAmazonApp(unittest.TestCase):
 
     def test_filter_by_department(self) -> None:
         self.app.click_home()
-        time.sleep(5)
         self.app.click_deal_promotion()
         self.app.click_filters()
-        time.sleep(5)
         self.app.click_see_more()
         self.app.click_software()
 
