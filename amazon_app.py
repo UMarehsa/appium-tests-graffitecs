@@ -8,6 +8,7 @@ class AmazonApp:
     def __init__(self, driver):
         self.driver = driver
 
+    #click on notification button. Don't allow
     def allow_permissions(self):
         wait = WebDriverWait(self.driver, 40)
         wait.until(EC.presence_of_element_located((By.ID, 'com.android.permissioncontroller:id/permission_allow_button'))).click()
