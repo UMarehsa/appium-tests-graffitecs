@@ -27,7 +27,7 @@ class TestAmazonApp(unittest.TestCase):
 
 
 
-    def test_total_number_for_category(self) -> None:
+    def test_total_number_for_category(self):
         self.app.allow_permissions()
         self.app.skip_sign_in()
         self.app.click_cart_icon()
@@ -52,7 +52,7 @@ class TestAmazonApp(unittest.TestCase):
         self.app.assert_add_to_cart()
 
 
-    def test_filter_by_department(self) -> None:
+    def test_filter_by_department(self):
         self.app.allow_permissions()
         self.app.skip_sign_in()
         self.app.click_deal_promotion()
